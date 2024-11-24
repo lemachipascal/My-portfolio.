@@ -1,0 +1,156 @@
+/* General Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+  }
+  
+  .navbar.scrolled {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient when scrolled */
+    padding: 15px 30px; /* Smaller padding when scrolled */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+  
+  /* Navbar Logo */
+  .navbar__logo h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar.scrolled .navbar__logo h2 {
+    transform: translateY(-5px); /* Logo animation on scroll */
+  }
+  
+  /* Navbar Links */
+  .navbar__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar__links li {
+    margin: 0;
+  }
+  
+  .navbar__links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar__links li a:hover {
+    color: #ff7e5f; /* Vibrant hover color */
+    transform: translateY(-3px); /* Hover effect */
+  }
+  
+  /* Underline effect on hover */
+  .navbar__links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff7e5f;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar__links li a:hover::after {
+    transform: scaleX(1); /* Underline expands on hover */
+    transform-origin: left;
+  }
+  
+  /* Mobile Menu */
+  @media (max-width: 768px) {
+    .navbar__links {
+      flex-direction: column;
+      gap: 10px;
+      display: none; /* Hide menu by default */
+      width: 100%;
+      align-items: center;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9); /* Dark background for mobile */
+      padding: 15px 0;
+      transform: translateY(-100%); /* Initially hidden off-screen */
+    }
+  
+    .navbar__links.active {
+      display: flex;
+      transform: translateY(0); /* Slide in when active */
+    }
+  
+    /* Logo positioning for mobile */
+    .navbar__logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+  
+    /* Hamburger menu */
+    .navbar__menu-icon {
+      display: block;
+      font-size: 2.5rem;
+      cursor: pointer;
+      color: white;
+      z-index: 20; /* Ensure the icon is above other content */
+    }
+  
+    .navbar__menu-icon.open {
+      transform: rotate(90deg); /* Rotates when the menu is open */
+    }
+  
+    .navbar__menu-icon::before, .navbar__menu-icon::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 4px;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+  
+    .navbar__menu-icon::before {
+      top: 0;
+      left: 0;
+    }
+  
+    .navbar__menu-icon::after {
+      bottom: 0;
+      left: 0;
+    }
+  
+    .navbar__menu-icon.open::before {
+      transform: rotate(45deg); /* Top bar becomes diagonal */
+      top: 10px;
+    }
+  
+    .navbar__menu-icon.open::after {
+      transform: rotate(-45deg); /* Bottom bar becomes diagonal */
+      bottom: 10px;
+    }
+  }
+  

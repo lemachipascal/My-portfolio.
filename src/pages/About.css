@@ -1,0 +1,84 @@
+/* General About Page Styling */
+.about {
+  background: #f4f4f9;
+  padding: 60px 0;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #3f51b5;
+  letter-spacing: 2px;
+}
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Styling each timeline item */
+.timeline__item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline__item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Icons inside timeline items */
+.timeline__item svg {
+  color: #3f51b5;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.timeline__item:hover svg {
+  color: #f5a623;
+}
+
+/* Styling the heading of each timeline item */
+.timeline__item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Styling the paragraph of each timeline item */
+.timeline__item p {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* Add a smooth transition effect for the timeline items */
+.timeline__item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline__item {
+    width: 80%;
+    max-width: 350px;
+  }
+}

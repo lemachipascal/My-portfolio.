@@ -1,0 +1,85 @@
+/* General Contact Page Styling */
+.contact {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3f51b5;
+  margin-bottom: 40px;
+}
+
+.contact__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.contact__item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact__item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact__item svg {
+  color: #3f51b5;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.contact__item:hover svg {
+  color: #f5a623;
+}
+
+.contact__item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contact__item p {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+.contact__item a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact__item a:hover {
+  color: #f5a623;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact__details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact__item {
+    width: 80%;
+    max-width: 350px;
+  }
+}
