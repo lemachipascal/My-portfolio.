@@ -34,7 +34,7 @@ const Contact = () => {
           <FaEnvelope size={50} />
           <h3>Email</h3>
           <p>
-            <a href="mailto:yourname@example.com">yourname@example.com</a>
+            <a href="mailto:lemachijo421@gmail.com">lemachijo421@gmail.com</a>
           </p>
         </div>
       </div>
